@@ -1,16 +1,13 @@
 #include <stdio.h>
-/**
- * main - runs the program
- *
- * Return: 1
- */
-int main(void)
-{
-	int i = 2015;
-	int n = 10;
-	int t = 19;
+#include <unistd.h>
 
-	printf("and that piece of art is useful%c %c", '"', '-');
-	printf(" Dora Korpar, %d%c%d%c%d\n", i, '-', t);
+/**
+ * main - Entry point
+ *
+ * Return: 0
+ */
+int main(void);
+{
+	write(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 	return (1);
 }
