@@ -18,7 +18,7 @@ int main(void)
 				putchar(d);
 				if (i == '8' && d == '9')
 					continue;
-				putchar('.');
+				putchar(',');
 				putchar(' ');
 			}
 		}
