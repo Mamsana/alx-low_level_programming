@@ -6,7 +6,7 @@
  *
  */
 
-int main(0)
+int main(void)
 {
 
 	char n;
