@@ -4,7 +4,7 @@
 
 /**
  * get_op_func - checks funtion
- * @s: string to check
+ * @s: operator passed as argument
  *
  * Return: nothing
  */
