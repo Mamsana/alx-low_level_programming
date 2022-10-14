@@ -1,32 +1,56 @@
 #include "3-calc.h"
-#include <stdlib.h>
-#include <string.h>
 
 /**
- * get_op_func - checks funtion
- * @s: operator passed as argument
- *
- * Return: nothing
+ * op_add - prototype to add
+ * @a: integer
+ * @b: integer
+ * Return: integer
  */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-	{ "+", op_add },
-	{ "-", op_sub },
-	{ "*", op_mul },
-	{ "/", op_div },
-	{ "%", op_mod },
-	{ NULL, NULL }
-	};
-	int i = 0;
+	return (a + b);
+}
 
-	while (i < 5)
-	{
-		if (strcmp(s, ops[i].op) == 0)
-			return (ops[i].f);
+/**
+ * op_sub - prototype to subtract
+ * @a: integer
+ * @b: integer
+ * Return: integer
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
 
-		i++;
-	}
+/**
+ * op_mul - prototype to multiply
+ * @a: integer
+ * @b: integer
+ * Return: integer
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
 
-	return (0);
+/**
+ * op_div - prototype to divide
+ * @a: integer
+ * @b: integer
+ * Return: integer
+ */
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+
+/**
+ * op_mod - prototype to return remainder
+ * @a: integer
+ * @b: integer
+ * Return: integer
+ */
+int op_mod(int a, int b)
+{
+	return (a % b);
 }

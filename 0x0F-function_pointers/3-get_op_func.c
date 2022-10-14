@@ -1,75 +1,30 @@
-#include "3-calc.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include "3-calc.h"
 
 /**
- * op_add - addition operator
- * @a: int to add
- * @b: int to add
- *
- * Return: (0)
+ * get_op_func - prototype
+ * @s: operator
+ * Return: pointer to operation
  */
-int op_add(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
-	return (a + b);
-}
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
 
-/**
- * op_sub - subtraction operator
- * @a: int to subtract from
- * @b: int to subtract
- *
- * Return: (0)
- */
-int op_sub(int a, int b)
-{
-	return (a - b);
-}
-
-/**
- * op_mul - multiplication operator
- * @a: int to multiply
- * @b: int to multiply
- *
- * Return: (0)
- */
-int op_mul(int a, int b)
-{
-	return (a * b);
-}
-
-/**
- * op_div - division operator
- * @a: int to divide
- * @b: int to divide by
- *
- * Return: (0)
- */
-int op_div(int a, int b)
-{
-	if (b == 0)
+	while (ops[i].op != NULL)
 	{
-		printf("Error\n");
-		exit(100);
+		if (*s == *ops[i].op)
+		{
+			return (ops[i].f);
+		}
+		i++;
 	}
-
-	return (a / b);
-}
-
-/**
- * op_mod - modulus operator
- * @a: int modulus
- * @b: int modulus
- *
- * Return: (0)
- */
-int op_mod(int a, int b)
-{
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
-	return (a % b);
+	return (NULL);
 }
