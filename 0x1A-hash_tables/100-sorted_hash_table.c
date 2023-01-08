@@ -90,7 +90,6 @@ void insert_sort(shash_node_t *node, shash_table_t *ht)
 	node->snext = head->snext;
 	head->snext = node;
 }
-
 /**
  * shash_table_get - retrieves a value associated with a key
  * @ht: hash table to look into
@@ -144,7 +143,6 @@ void shash_table_print(const shash_table_t *ht)
 
 	printf("}\n");
 }
-
 /**
  * shash_table_print_rev - prints a hash table in reverse
  * @ht: hash table to print
@@ -233,7 +231,8 @@ int check_key_s(shash_node_t *ht, const char *key)
  *
  * Return: the address of the new element, or NULL if it fails
  */
-shash_node_t *add_node_s(shash_node_t **head, const char *key, const char *value)
+shash_node_t *add_node_s(shash_node_t **head, const char *key,
+	const char *value)
 {
 	shash_node_t *new;
 
