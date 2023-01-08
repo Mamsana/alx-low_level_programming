@@ -1,1 +1,1 @@
-How to write a program that prints _putchar
+0x02. C - Functions, nested loops
